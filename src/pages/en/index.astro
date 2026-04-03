@@ -185,7 +185,7 @@ const waMessage = encodeURIComponent(tr.whatsapp.defaultMessage);
   .hero-inner {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .hero-photo { order: 1; }
   .hero-text { order: 2; }
@@ -197,14 +197,14 @@ const waMessage = encodeURIComponent(tr.whatsapp.defaultMessage);
 
   .cat-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .about-inner {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .testimonials-grid {
@@ -217,6 +217,13 @@ const waMessage = encodeURIComponent(tr.whatsapp.defaultMessage);
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  /* Small tablets and up */
+  @media (min-width: 480px) {
+    .cat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 768px) {
