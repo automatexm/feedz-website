@@ -10,7 +10,6 @@ const products = [
   {
     id: 'dogs',
     category: 'Chiens',
-    emoji: '🐕',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Croquettes Premium Adulte', description: 'Aliment complet pour chiens adultes. Riche en protéines, avec oméga pour un pelage sain. Disponible en sacs de 5kg et 15kg.' },
       { brand: 'Dommelsche Watermolen', name: 'Formule Croissance Chiot', description: 'Formulé spécialement pour chiots de 2 à 12 mois. Soutient le développement osseux et la croissance.' },
@@ -19,7 +18,6 @@ const products = [
   {
     id: 'horses',
     category: 'Chevaux',
-    emoji: '🐴',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Maintenance Mix', description: 'Alimentation quotidienne équilibrée pour chevaux au travail léger ou retraités. Bonne base en fibres avec support minéral.' },
       { brand: 'Dommelsche Watermolen', name: 'Performance Sport', description: 'Aliment énergétique pour chevaux en entraînement régulier. Électrolytes et vitamines B pour l\'endurance.' },
@@ -29,17 +27,16 @@ const products = [
   {
     id: 'poultry',
     category: 'Volailles & Poulets',
-    emoji: '🐔',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Granulés Pondeuses', description: 'Nutrition complète pour poules pondeuses. Haute teneur en calcium pour des coquilles solides. 16% de protéines.' },
       { brand: 'Dommelsche Watermolen', name: 'Démarrage Poussins', description: 'Premier aliment pour poussins 0-8 semaines. Haute protéine (21%) pour soutenir la croissance rapide.' },
       { brand: 'Dommelsche Watermolen', name: 'Finition Poulet de Chair', description: 'Formule de finition pour volailles de 4 semaines à l\'abattage. Conversion alimentaire efficace.' },
+      { brand: 'Feedz', name: 'Poussins d\'Un Jour', description: 'Poussins d\'un jour disponibles périodiquement — commande anticipée requise. Contactez-nous pour réserver votre lot.' },
     ],
   },
   {
     id: 'livestock',
     category: 'Bétail',
-    emoji: '🐐',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Granulés Chèvres & Moutons', description: 'Concentré équilibré pour petits ruminants. Soutient la production laitière et la condition corporelle.' },
       { brand: 'Dommelsche Watermolen', name: 'Mix Bovins', description: 'Complément énergie et protéines pour bovins. Complète les fourrages locaux.' },
@@ -48,7 +45,6 @@ const products = [
   {
     id: 'birds',
     category: 'Oiseaux',
-    emoji: '🐦',
     items: [
       { brand: 'Divers marques', name: 'Mix Perroquets & Oiseaux', description: 'Mélanges de graines et granulés pour perroquets, perruches, canaris et autres oiseaux en cage.' },
     ],
@@ -56,7 +52,6 @@ const products = [
   {
     id: 'farm',
     category: 'Fournitures Agricoles',
-    emoji: '🌾',
     items: [
       { brand: 'Divers marques', name: 'Foin Timothy', description: 'Foin de graminées premium pour chevaux, lapins et cobayes. Extrait à sec et vert.' },
       { brand: 'Divers marques', name: 'Coquilles d\'Huîtres', description: 'Complément calcium pour poules pondeuses. À disposition séparée.' },
@@ -89,7 +84,7 @@ const products = [
         </a>
         {products.map(cat => (
           <a href={`#${cat.id}`} style="padding: 0.375rem 0.875rem; border-radius: 9999px; border: 2px solid #2D6A4F; color: #2D6A4F; font-size: 0.875rem; font-weight: 600; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; background: transparent;">
-            {cat.emoji} {cat.category}
+            {cat.category}
           </a>
         ))}
       </div>
@@ -101,7 +96,6 @@ const products = [
     {products.map(cat => (
       <section id={cat.id} style="margin-bottom: 3rem; scroll-margin-top: 80px;">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-          <span style="font-size: 1.5rem;" aria-hidden="true">{cat.emoji}</span>
           <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #2C1A0E; margin: 0;">
             {cat.category}
           </h2>

@@ -10,7 +10,6 @@ const products = [
   {
     id: 'dogs',
     category: 'Dogs',
-    emoji: '🐕',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Premium Adult Dog Food', description: 'Complete dry food for adult dogs. Rich in protein, with added omega fatty acids for a healthy coat. Available in 5kg and 15kg bags.' },
       { brand: 'Dommelsche Watermolen', name: 'Puppy Growth Formula', description: 'Specially formulated for puppies 2–12 months. Supports bone development and healthy growth.' },
@@ -19,7 +18,6 @@ const products = [
   {
     id: 'horses',
     category: 'Horses',
-    emoji: '🐴',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Maintenance Mix', description: 'Balanced daily feed for horses in light work or retired horses. Good fiber base with mineral support.' },
       { brand: 'Dommelsche Watermolen', name: 'Performance Sport Feed', description: 'High-energy feed for horses in regular training. Added electrolytes and B-vitamins for stamina.' },
@@ -29,17 +27,16 @@ const products = [
   {
     id: 'poultry',
     category: 'Poultry & Chickens',
-    emoji: '🐔',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Layer Pellets', description: 'Complete nutrition for laying hens. High calcium content for strong eggshells. 16% protein.' },
       { brand: 'Dommelsche Watermolen', name: 'Chick Starter', description: 'First feed for chicks 0–8 weeks. High protein (21%) to support rapid early growth.' },
       { brand: 'Dommelsche Watermolen', name: 'Broiler Finisher', description: 'Finishing formula for meat birds from 4 weeks to slaughter. Efficient feed conversion.' },
+      { brand: 'Feedz', name: 'One-Day-Old Chicks', description: 'Day-old chicks available periodically — advance order required. Contact us to reserve your batch.' },
     ],
   },
   {
     id: 'livestock',
     category: 'Livestock',
-    emoji: '🐐',
     items: [
       { brand: 'Dommelsche Watermolen', name: 'Goat & Sheep Pellets', description: 'Balanced concentrate for small ruminants. Supports milk production and healthy body condition.' },
       { brand: 'Dommelsche Watermolen', name: 'Cattle Mix', description: 'Energy and protein supplement for beef and dairy cattle. Complements local forage.' },
@@ -48,7 +45,6 @@ const products = [
   {
     id: 'birds',
     category: 'Birds',
-    emoji: '🐦',
     items: [
       { brand: 'Various brands', name: 'Parrot & Cage Bird Mix', description: 'Seed and pellet mixes for parrots, parakeets, canaries, and other cage birds.' },
     ],
@@ -56,7 +52,6 @@ const products = [
   {
     id: 'farm',
     category: 'Farm Supplies',
-    emoji: '🌾',
     items: [
       { brand: 'Various brands', name: 'Timothy Hay', description: 'Premium grass hay for horses, rabbits, and guinea pigs. Dust-extracted and green.' },
       { brand: 'Various brands', name: 'Oyster Shell Grit', description: 'Calcium supplement for laying hens. Self-regulate intake in a separate dish.' },
@@ -89,7 +84,7 @@ const products = [
         </a>
         {products.map(cat => (
           <a href={`#${cat.id}`} style="padding: 0.375rem 0.875rem; border-radius: 9999px; border: 2px solid #2D6A4F; color: #2D6A4F; font-size: 0.875rem; font-weight: 600; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; background: transparent;">
-            {cat.emoji} {cat.category}
+            {cat.category}
           </a>
         ))}
       </div>
@@ -101,7 +96,6 @@ const products = [
     {products.map(cat => (
       <section id={cat.id} style="margin-bottom: 3rem; scroll-margin-top: 80px;">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-          <span style="font-size: 1.5rem;" aria-hidden="true">{cat.emoji}</span>
           <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #2C1A0E; margin: 0;">
             {cat.category}
           </h2>
