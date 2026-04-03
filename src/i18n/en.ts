@@ -24,7 +24,7 @@ export const en = {
       { id: 'horses', label: 'Horses', description: 'Performance and leisure horse feed', emoji: '🐴' },
       { id: 'poultry', label: 'Poultry & Chickens', description: 'Layer, broiler, and backyard feed', emoji: '🐔' },
       { id: 'livestock', label: 'Livestock', description: 'Goats, sheep, and cattle nutrition', emoji: '🐐' },
-      { id: 'fish', label: 'Fish', description: 'Aquarium fish food and supplies', emoji: '🐠' },
+      { id: 'supplies', label: 'Pet Supplies', description: 'Feeders, bowls, leashes, and accessories', emoji: '🥣' },
       { id: 'farm', label: 'Farm Supplies', description: 'Hay, bedding, feeders, and accessories', emoji: '🌾' },
     ],
   },
@@ -141,7 +141,7 @@ export const en = {
     },
     products: {
       title: 'Products',
-      description: 'Browse our range of quality animal feed for dogs, horses, poultry, birds, livestock, fish, and farm supplies in Sint Maarten.',
+      description: 'Browse our range of quality animal feed for dogs, horses, poultry, birds, livestock, and pet supplies in Sint Maarten.',
     },
     about: {
       title: 'About Us',

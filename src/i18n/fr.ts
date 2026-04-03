@@ -26,7 +26,7 @@ export const fr: Translations = {
       { id: 'horses', label: 'Chevaux', description: 'Alimentation pour chevaux de sport et de loisir', emoji: '🐴' },
       { id: 'poultry', label: 'Volailles & Poulets', description: 'Aliments pour poules pondeuses et basse-cour', emoji: '🐔' },
       { id: 'livestock', label: 'Bétail', description: 'Nutrition pour chèvres, moutons et bovins', emoji: '🐐' },
-      { id: 'fish', label: 'Poissons', description: 'Nourriture et fournitures pour aquarium', emoji: '🐠' },
+      { id: 'supplies', label: 'Fournitures', description: 'Mangeoires, gamelles, laisses et accessoires', emoji: '🥣' },
       { id: 'farm', label: 'Fournitures agricoles', description: 'Foin, litière, mangeoires et accessoires', emoji: '🌾' },
     ],
   },
@@ -143,7 +143,7 @@ export const fr: Translations = {
     },
     products: {
       title: 'Produits',
-      description: "Découvrez notre gamme d'aliments de qualité pour chiens, chevaux, volailles, oiseaux, bétail, poissons et fournitures agricoles à Saint-Martin.",
+      description: "Découvrez notre gamme d'aliments de qualité pour chiens, chevaux, volailles, oiseaux, bétail et fournitures à Saint-Martin.",
     },
     about: {
       title: 'À propos',
