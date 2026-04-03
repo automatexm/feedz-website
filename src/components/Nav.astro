@@ -53,12 +53,12 @@ const waUrl = `https://wa.me/17215810102?text=${waMessage}`;
         <div style="display: flex; border: 1px solid rgba(245,240,232,0.4); border-radius: 6px; overflow: hidden;">
           <a
             href={`/en/`}
-            style={`padding: 0.25rem 0.625rem; font-size: 0.8125rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; transition: background 0.15s; ${lang === 'en' ? 'background: #F5F0E8; color: #2D6A4F;' : 'color: #F5F0E8;'}`}
-          >EN</a>
+            style={`display: flex; align-items: center; gap: 0.25rem; padding: 0.375rem 0.625rem; font-size: 0.8125rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; transition: background 0.15s; ${lang === 'en' ? 'background: #F5F0E8; color: #2D6A4F;' : 'color: #F5F0E8;'}`}
+          ><span aria-hidden="true">🇺🇸</span> EN</a>
           <a
             href={`/fr/`}
-            style={`padding: 0.25rem 0.625rem; font-size: 0.8125rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; transition: background 0.15s; border-left: 1px solid rgba(245,240,232,0.4); ${lang === 'fr' ? 'background: #F5F0E8; color: #2D6A4F;' : 'color: #F5F0E8;'}`}
-          >FR</a>
+            style={`display: flex; align-items: center; gap: 0.25rem; padding: 0.375rem 0.625rem; font-size: 0.8125rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; transition: background 0.15s; border-left: 1px solid rgba(245,240,232,0.4); ${lang === 'fr' ? 'background: #F5F0E8; color: #2D6A4F;' : 'color: #F5F0E8;'}`}
+          ><span aria-hidden="true">🇫🇷</span> FR</a>
         </div>
 
         <!-- WA button (desktop only) -->
