@@ -76,20 +76,54 @@ const products = [
   </div>
 
   <!-- Category nav tabs -->
-  <div style="background: white; border-bottom: 1px solid #EAE0CC; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
-      <div style="display: flex; gap: 0.5rem; padding: 0.75rem 0; white-space: nowrap;">
-        <a href="#all" style="padding: 0.625rem 1rem; border-radius: 9999px; background: #2D6A4F; color: white; font-size: 0.875rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; min-height: 44px; display: flex; align-items: center;">
-          {tr.products.filterAll}
-        </a>
-        {products.map(cat => (
-          <a href={`#${cat.id}`} style="padding: 0.625rem 1rem; border-radius: 9999px; border: 2px solid #2D6A4F; color: #2D6A4F; font-size: 0.875rem; font-weight: 600; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; background: transparent; min-height: 44px; display: flex; align-items: center;">
-            {cat.category}
+  <div style="background: white; border-bottom: 1px solid #EAE0CC; position: relative;">
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+      <div style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
+        <div style="display: flex; gap: 0.5rem; padding: 0.75rem 0; white-space: nowrap;">
+          <a href="#all" class="cat-tab cat-tab-active">
+            {tr.products.filterAll}
           </a>
-        ))}
+          {products.map(cat => (
+            <a href={`#${cat.id}`} class="cat-tab">
+              {cat.category}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
+    <!-- Scroll indicator fade -->
+    <div style="position: absolute; right: 0; top: 0; bottom: 1px; width: 48px; background: linear-gradient(to right, transparent, white); pointer-events: none;" class="scroll-fade"></div>
   </div>
+
+  <style>
+    .cat-tab {
+      padding: 0.5rem 0.875rem;
+      border-radius: 9999px;
+      border: 2px solid #2D6A4F;
+      color: #2D6A4F;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      text-decoration: none;
+      background: transparent;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .cat-tab-active {
+      background: #2D6A4F;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      .cat-tab {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+        min-height: 44px;
+      }
+      .scroll-fade { display: none; }
+    }
+  </style>
 
   <!-- Products by category -->
   <div id="all" style="max-width: 1100px; margin: 0 auto; padding: 2.5rem 1rem;">
