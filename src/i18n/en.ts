@@ -58,7 +58,7 @@ export const en = {
   },
   location: {
     heading: 'Find us',
-    address: '[Address — Ismaru to confirm]',
+    address: 'Sucker Garden Road 84',
     phone: '+1 721 581 0102',
     hours: 'Mon–Sat: 8:00 AM – 5:00 PM',
     ctaLabel: 'Chat with us now',

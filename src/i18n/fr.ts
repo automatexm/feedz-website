@@ -60,7 +60,7 @@ export const fr: Translations = {
   },
   location: {
     heading: 'Nous trouver',
-    address: '[Adresse — à confirmer par Ismaru]',
+    address: 'Sucker Garden Road 84',
     phone: '+1 721 581 0102',
     hours: 'Lun–Sam : 8h00 – 17h00',
     ctaLabel: 'Écrivez-nous maintenant',
