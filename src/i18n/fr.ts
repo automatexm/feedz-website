@@ -12,7 +12,7 @@ export const fr: Translations = {
   },
   hero: {
     headline: "Le magasin d'alimentation animale de Saint-Martin",
-    subline: "Alimentation de qualité pour chiens, chats, chevaux, volailles et bien plus. À Saint-Martin.",
+    subline: "Alimentation de qualité pour chiens, chevaux, volailles, oiseaux et bien plus. À Saint-Martin.",
     ctaWhatsApp: '📱 WhatsApp',
     ctaProducts: 'Voir les produits',
     photoAlt: 'Devanture du magasin Feedz à Saint-Martin',
@@ -21,11 +21,12 @@ export const fr: Translations = {
     heading: 'Ce que nous proposons',
     subheading: 'Alimentation et fournitures de qualité pour tous les animaux de Saint-Martin',
     items: [
-      { id: 'dogs-cats', label: 'Chiens & Chats', description: 'Nourriture premium et produits de soin', emoji: '🐕🐈' },
+      { id: 'dogs', label: 'Chiens', description: 'Nourriture premium et produits de soin pour chiens', emoji: '🐕' },
+      { id: 'birds', label: 'Oiseaux', description: 'Graines et fournitures pour oiseaux en cage et perroquets', emoji: '🐦' }, 
       { id: 'horses', label: 'Chevaux', description: 'Alimentation pour chevaux de sport et de loisir', emoji: '🐴' },
       { id: 'poultry', label: 'Volailles & Poulets', description: 'Aliments pour poules pondeuses et basse-cour', emoji: '🐔' },
       { id: 'livestock', label: 'Bétail', description: 'Nutrition pour chèvres, moutons et bovins', emoji: '🐐' },
-      { id: 'birds-fish', label: 'Oiseaux & Poissons', description: 'Perroquets, oiseaux en cage et aquarium', emoji: '🐦🐠' },
+      { id: 'fish', label: 'Poissons', description: 'Nourriture et fournitures pour aquarium', emoji: '🐠' },
       { id: 'farm', label: 'Fournitures agricoles', description: 'Foin, litière, mangeoires et accessoires', emoji: '🌾' },
     ],
   },
@@ -138,11 +139,11 @@ export const fr: Translations = {
   seo: {
     home: {
       title: 'Accueil',
-      description: "Feedz — le magasin d'alimentation animale de Saint-Martin. Alimentation de qualité pour chiens, chats, chevaux, volailles et plus. Revendeur agréé Dommelsche Watermolen.",
+      description: "Feedz — le magasin d'alimentation animale de Saint-Martin. Alimentation de qualité pour chiens, chevaux, volailles, oiseaux et plus. Revendeur agréé Dommelsche Watermolen.",
     },
     products: {
       title: 'Produits',
-      description: "Découvrez notre gamme d'aliments de qualité pour chiens, chats, chevaux, volailles, bétail, oiseaux, poissons et fournitures agricoles à Saint-Martin.",
+      description: "Découvrez notre gamme d'aliments de qualité pour chiens, chevaux, volailles, oiseaux, bétail, poissons et fournitures agricoles à Saint-Martin.",
     },
     about: {
       title: 'À propos',

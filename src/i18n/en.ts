@@ -10,7 +10,7 @@ export const en = {
   },
   hero: {
     headline: "Sint Maarten's Animal Feed Store",
-    subline: "Quality feed for dogs, cats, horses, poultry, and more. Right here in Sint Maarten.",
+    subline: "Quality feed for dogs, horses, poultry, birds, and more. Right here in Sint Maarten.",
     ctaWhatsApp: '📱 WhatsApp Us',
     ctaProducts: 'Browse Products',
     photoAlt: 'Feedz store exterior in Sint Maarten',
@@ -19,11 +19,12 @@ export const en = {
     heading: 'What we carry',
     subheading: 'Quality feed and supplies for every animal on Sint Maarten',
     items: [
-      { id: 'dogs-cats', label: 'Dogs & Cats', description: 'Premium pet food and care products', emoji: '🐕🐈' },
+      { id: 'dogs', label: 'Dogs', description: 'Premium dog food and care products', emoji: '🐕' },
+      { id: 'birds', label: 'Birds', description: 'Birdseed and supplies for cage birds and parrots', emoji: '🐦' },
       { id: 'horses', label: 'Horses', description: 'Performance and leisure horse feed', emoji: '🐴' },
       { id: 'poultry', label: 'Poultry & Chickens', description: 'Layer, broiler, and backyard feed', emoji: '🐔' },
       { id: 'livestock', label: 'Livestock', description: 'Goats, sheep, and cattle nutrition', emoji: '🐐' },
-      { id: 'birds-fish', label: 'Birds & Fish', description: 'Cage birds, parrots, and aquarium fish', emoji: '🐦🐠' },
+      { id: 'fish', label: 'Fish', description: 'Aquarium fish food and supplies', emoji: '🐠' },
       { id: 'farm', label: 'Farm Supplies', description: 'Hay, bedding, feeders, and accessories', emoji: '🌾' },
     ],
   },
@@ -136,11 +137,11 @@ export const en = {
   seo: {
     home: {
       title: 'Home',
-      description: "Feedz — Sint Maarten's animal feed store. Quality food for dogs, cats, horses, poultry, livestock, and more. Certified Dommelsche Watermolen retailer.",
+      description: "Feedz — Sint Maarten's animal feed store. Quality food for dogs, horses, poultry, birds, livestock, and more. Certified Dommelsche Watermolen retailer.",
     },
     products: {
       title: 'Products',
-      description: 'Browse our range of quality animal feed for dogs, cats, horses, poultry, livestock, birds, fish, and farm supplies in Sint Maarten.',
+      description: 'Browse our range of quality animal feed for dogs, horses, poultry, birds, livestock, fish, and farm supplies in Sint Maarten.',
     },
     about: {
       title: 'About Us',
