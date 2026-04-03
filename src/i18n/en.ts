@@ -24,7 +24,7 @@ export const en = {
       { id: 'horses', label: 'Horses', description: 'Performance and leisure horse feed', emoji: '🐴' },
       { id: 'poultry', label: 'Poultry & Chickens', description: 'Layer, broiler, and backyard feed', emoji: '🐔' },
       { id: 'livestock', label: 'Livestock', description: 'Goats, sheep, and cattle nutrition', emoji: '🐐' },
-      { id: 'supplies', label: 'Pet Supplies', description: 'Feeders, bowls, leashes, and accessories', emoji: '🥣' },
+      { id: 'accessories', label: 'Accessories', description: 'Feeders, bowls, and farm equipment', emoji: '🥣' },
       { id: 'farm', label: 'Farm Supplies', description: 'Hay, bedding, feeders, and accessories', emoji: '🌾' },
     ],
   },

@@ -26,7 +26,7 @@ export const fr: Translations = {
       { id: 'horses', label: 'Chevaux', description: 'Alimentation pour chevaux de sport et de loisir', emoji: '🐴' },
       { id: 'poultry', label: 'Volailles & Poulets', description: 'Aliments pour poules pondeuses et basse-cour', emoji: '🐔' },
       { id: 'livestock', label: 'Bétail', description: 'Nutrition pour chèvres, moutons et bovins', emoji: '🐐' },
-      { id: 'supplies', label: 'Fournitures', description: 'Mangeoires, gamelles, laisses et accessoires', emoji: '🥣' },
+      { id: 'accessories', label: 'Accessoires', description: 'Mangeoires, gamelles et équipement', emoji: '🥣' },
       { id: 'farm', label: 'Fournitures agricoles', description: 'Foin, litière, mangeoires et accessoires', emoji: '🌾' },
     ],
   },
