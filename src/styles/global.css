@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-feedz-forest: #2D6A4F;
+  --color-feedz-leaf: #52B788;
+  --color-feedz-amber: #D4A017;
+  --color-feedz-stone: #F5F0E8;
+  --color-feedz-sand: #EAE0CC;
+  --color-feedz-bark: #5C4A35;
+  --color-feedz-earth: #2C1A0E;
+  --color-feedz-whatsapp: #25D366;
+  --color-feedz-link: #1B6CA8;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+
+  --shadow-card: 0 2px 8px rgba(44, 26, 14, 0.08);
+  --shadow-card-hover: 0 4px 16px rgba(44, 26, 14, 0.12);
+  --shadow-whatsapp: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+html {
+  background-color: #F5F0E8;
+  color: #5C4A35;
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #2C1A0E;
+}
+
+a {
+  color: #1B6CA8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* WhatsApp button pulse animation */
+@keyframes wa-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.wa-pulse-once {
+  animation: wa-pulse 0.6s ease-in-out 1s 1;
+}
+
+/* Photo placeholder styling */
+.photo-placeholder {
+  background-color: #EAE0CC;
+  border: 2px dashed #52B788;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  color: #5C4A35;
+  font-size: 0.875rem;
+}

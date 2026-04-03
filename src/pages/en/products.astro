@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/Base.astro';
+import DWPartnerBadge from '../../components/DWPartnerBadge.astro';
+import { t } from '../../i18n/index';
+
+const lang = 'en' as const;
+const tr = t(lang);
+
+const products = [
+  {
+    id: 'dogs-cats',
+    category: 'Dogs & Cats',
+    emoji: '🐕🐈',
+    items: [
+      { brand: 'Dommelsche Watermolen', name: 'Premium Adult Dog Food', description: 'Complete dry food for adult dogs. Rich in protein, with added omega fatty acids for a healthy coat. Available in 5kg and 15kg bags.' },
+      { brand: 'Dommelsche Watermolen', name: 'Puppy Growth Formula', description: 'Specially formulated for puppies 2–12 months. Supports bone development and healthy growth.' },
+      { brand: 'Dommelsche Watermolen', name: 'Adult Cat Food', description: 'Complete nutrition for adult cats. High meat content, added taurine for heart health.' },
+    ],
+  },
+  {
+    id: 'horses',
+    category: 'Horses',
+    emoji: '🐴',
+    items: [
+      { brand: 'Dommelsche Watermolen', name: 'Maintenance Mix', description: 'Balanced daily feed for horses in light work or retired horses. Good fiber base with mineral support.' },
+      { brand: 'Dommelsche Watermolen', name: 'Performance Sport Feed', description: 'High-energy feed for horses in regular training. Added electrolytes and B-vitamins for stamina.' },
+      { brand: 'Dommelsche Watermolen', name: 'Pony Mix', description: 'Lower-energy mix formulated for ponies and easy keepers. Prevents obesity-related issues.' },
+    ],
+  },
+  {
+    id: 'poultry',
+    category: 'Poultry & Chickens',
+    emoji: '🐔',
+    items: [
+      { brand: 'Dommelsche Watermolen', name: 'Layer Pellets', description: 'Complete nutrition for laying hens. High calcium content for strong eggshells. 16% protein.' },
+      { brand: 'Dommelsche Watermolen', name: 'Chick Starter', description: 'First feed for chicks 0–8 weeks. High protein (21%) to support rapid early growth.' },
+      { brand: 'Dommelsche Watermolen', name: 'Broiler Finisher', description: 'Finishing formula for meat birds from 4 weeks to slaughter. Efficient feed conversion.' },
+    ],
+  },
+  {
+    id: 'livestock',
+    category: 'Livestock',
+    emoji: '🐐',
+    items: [
+      { brand: 'Dommelsche Watermolen', name: 'Goat & Sheep Pellets', description: 'Balanced concentrate for small ruminants. Supports milk production and healthy body condition.' },
+      { brand: 'Dommelsche Watermolen', name: 'Cattle Mix', description: 'Energy and protein supplement for beef and dairy cattle. Complements local forage.' },
+    ],
+  },
+  {
+    id: 'birds-fish',
+    category: 'Birds & Fish',
+    emoji: '🐦🐠',
+    items: [
+      { brand: 'Various brands', name: 'Parrot & Cage Bird Mix', description: 'Seed and pellet mixes for parrots, parakeets, canaries, and other cage birds.' },
+      { brand: 'Various brands', name: 'Tropical Fish Flakes', description: 'Colour-enhancing flake food for tropical aquarium fish. High protein, easy to digest.' },
+    ],
+  },
+  {
+    id: 'farm',
+    category: 'Farm Supplies',
+    emoji: '🌾',
+    items: [
+      { brand: 'Various brands', name: 'Timothy Hay', description: 'Premium grass hay for horses, rabbits, and guinea pigs. Dust-extracted and green.' },
+      { brand: 'Various brands', name: 'Oyster Shell Grit', description: 'Calcium supplement for laying hens. Self-regulate intake in a separate dish.' },
+      { brand: 'Various brands', name: 'Straw Bedding', description: 'Clean golden straw for horse stalls, chicken coops, and small animal housing.' },
+    ],
+  },
+];
+---
+
+<Base title={tr.seo.products.title} description={tr.seo.products.description} lang={lang}>
+
+  <!-- Page header -->
+  <div style="background-color: #2D6A4F; padding: 3rem 1rem 2.5rem;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #F5F0E8; margin: 0 0 0.5rem;">
+        {tr.products.heading}
+      </h1>
+      <p style="font-family: 'Nunito Sans', system-ui, sans-serif; color: #EAE0CC; font-size: 1rem; margin: 0;">
+        {tr.products.subheading}
+      </p>
+    </div>
+  </div>
+
+  <!-- Category nav tabs -->
+  <div style="background: white; border-bottom: 1px solid #EAE0CC; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: flex; gap: 0.5rem; padding: 0.875rem 0; white-space: nowrap;">
+        <a href="#all" style="padding: 0.375rem 0.875rem; border-radius: 9999px; background: #2D6A4F; color: white; font-size: 0.875rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none;">
+          {tr.products.filterAll}
+        </a>
+        {products.map(cat => (
+          <a href={`#${cat.id}`} style="padding: 0.375rem 0.875rem; border-radius: 9999px; border: 2px solid #2D6A4F; color: #2D6A4F; font-size: 0.875rem; font-weight: 600; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; background: transparent;">
+            {cat.emoji} {cat.category}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Products by category -->
+  <div id="all" style="max-width: 1100px; margin: 0 auto; padding: 2.5rem 1rem;">
+    {products.map(cat => (
+      <section id={cat.id} style="margin-bottom: 3rem; scroll-margin-top: 80px;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <span style="font-size: 1.5rem;" aria-hidden="true">{cat.emoji}</span>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #2C1A0E; margin: 0;">
+            {cat.category}
+          </h2>
+        </div>
+        <div class="product-grid">
+          {cat.items.map(item => (
+            <div style="background: #EAE0CC; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(44,26,14,0.08);">
+              <div class="photo-placeholder" style="aspect-ratio: 16/9;">
+                <span>[Photo: {item.name} packaging]</span>
+              </div>
+              <div style="padding: 1.25rem;">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Nunito Sans', system-ui, sans-serif; margin-bottom: 0.25rem;">
+                  {item.brand}
+                </div>
+                <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.0625rem; font-weight: 700; color: #2C1A0E; margin: 0 0 0.5rem;">
+                  {item.name}
+                </h3>
+                <p style="font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 0.9rem; line-height: 1.55; color: #5C4A35; margin: 0 0 1rem;">
+                  {item.description}
+                </p>
+                <a
+                  href={`https://wa.me/17215810102?text=${encodeURIComponent(`${tr.whatsapp.productMessage}${item.name}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="display: inline-flex; align-items: center; gap: 0.375rem; background: #25D366; color: white; padding: 0.5625rem 1rem; border-radius: 6px; font-size: 0.875rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none;"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  {tr.products.whatsappCta}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <!-- "Don't see what you need" CTA -->
+  <div style="background-color: #D4A017; padding: 2.5rem 1rem;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start;">
+      <div>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.375rem; font-weight: 700; color: #2C1A0E; margin: 0 0 0.5rem;">
+          {tr.products.missingCta}
+        </h3>
+        <p style="font-family: 'Nunito Sans', system-ui, sans-serif; color: #2C1A0E; margin: 0; font-size: 1rem; line-height: 1.5;">
+          {tr.products.missingBody}
+        </p>
+      </div>
+      <a
+        href={`https://wa.me/17215810102?text=${encodeURIComponent(tr.whatsapp.defaultMessage)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style="display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: white; padding: 0.875rem 1.5rem; border-radius: 8px; font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 1rem; font-weight: 700; text-decoration: none;"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        {tr.products.missingButton}
+      </a>
+    </div>
+  </div>
+
+  <!-- DW compact badge -->
+  <div style="max-width: 1100px; margin: 2rem auto; padding: 0 1rem;">
+    <DWPartnerBadge lang={lang} variant="compact" />
+  </div>
+
+</Base>
+
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

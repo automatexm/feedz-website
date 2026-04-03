@@ -1,0 +1,70 @@
+---
+import { type Lang } from '../i18n/index';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  category: string;
+  date: Date;
+  readTime: number;
+  slug: string;
+  minRead: string;
+  readMoreLabel: string;
+}
+
+const { lang, title, description, category, date, readTime, slug, minRead, readMoreLabel } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+}).format(date);
+
+const categoryColors: Record<string, string> = {
+  horses: '#2D6A4F',
+  pets: '#52B788',
+  poultry: '#D4A017',
+  livestock: '#5C4A35',
+  birds: '#52B788',
+  general: '#2D6A4F',
+};
+const catColor = categoryColors[category] ?? '#2D6A4F';
+const catTextColor = category === 'poultry' ? '#2C1A0E' : 'white';
+const tipsBase = lang === 'fr' ? `/${lang}/conseils` : `/${lang}/tips`;
+---
+
+<article style="background: #EAE0CC; border-radius: 12px; box-shadow: 0 2px 8px rgba(44,26,14,0.08); overflow: hidden; display: flex; flex-direction: column;">
+  <!-- Category photo placeholder -->
+  <div class="photo-placeholder" style="aspect-ratio: 16/9; background-color: #EAE0CC; border-bottom: 2px dashed #52B788; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+    <span style="font-style: italic; color: #5C4A35; font-size: 0.8125rem; font-family: 'Nunito Sans', system-ui, sans-serif; text-align: center;">
+      [Photo: {category} feeding guide illustration]
+    </span>
+  </div>
+
+  <div style="padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+      <span style={`background: ${catColor}; color: ${catTextColor}; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Nunito Sans', system-ui, sans-serif;`}>
+        {category}
+      </span>
+      <span style="color: #5C4A35; font-size: 0.8125rem; font-family: 'Nunito Sans', system-ui, sans-serif;">
+        {formattedDate} · {readTime} {minRead}
+      </span>
+    </div>
+
+    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.125rem; font-weight: 700; color: #2C1A0E; margin: 0; line-height: 1.3;">
+      {title}
+    </h3>
+
+    <p style="font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 0.9375rem; color: #5C4A35; margin: 0; line-height: 1.55; flex: 1;">
+      {description}
+    </p>
+
+    <a
+      href={`${tipsBase}/${slug}/`}
+      style="display: inline-flex; align-items: center; gap: 0.25rem; color: #2D6A4F; font-size: 0.9375rem; font-weight: 700; font-family: 'Nunito Sans', system-ui, sans-serif; text-decoration: none; margin-top: auto;"
+    >
+      {readMoreLabel} →
+    </a>
+  </div>
+</article>
